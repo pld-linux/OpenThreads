@@ -11,7 +11,7 @@ Group:		Libraries
 Source0:	OpenThreads-v%{version}dev%{devel}.tar.gz
 # Source0-md5:  0a1c190e358459aa4a2f1018dc397be5
 Patch0:		%{name}-soname.patch
-URL:		http://openthreads.sourceforge.net
+URL:		http://openthreads.sourceforge.net/
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,7 +23,7 @@ standards.
 %description -l pl
 Biblioteka jest przeznaczona do udostêpniania minimalnego ale pe³nego
 interfejsu obiektowo zorientowanych (OO) w±tków dla programistów C++.
-Bazuje na modelu API w±tków w javie oraz na standardzie w±tków POSIX.
+Bazuje na modelu API w±tków w Javie oraz na standardzie w±tków POSIX.
 
 %package devel
 Summary:	OpenThreads devel files
@@ -47,6 +47,7 @@ Biblioteki programistyczne OpenThreads.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix}
 if [ "%{_libdir}" == "%{_prefix}/lib64" ]; then
