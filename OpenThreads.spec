@@ -46,12 +46,15 @@ Biblioteki programistyczne OpenThreads.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__rm} -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix}
+ln -sf `basename $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so.*` $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so
 
 %clean
-%{__rm} -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
