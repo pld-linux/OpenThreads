@@ -3,7 +3,7 @@ Summary:	A minimal & complete Object-Oriented (OO) thread interface
 Summary(pl):	Minimalny ale kompletny interfejs w±tków w programowaniu OO
 Name:		OpenThreads
 Version:	1.2
-Release:	0.%{devel}.1
+Release:	0.%{devel}.2
 License:	LGPL
 Group:		Libraries
 # version from OSG_OP_OT-0.9.6-2.tar.gz needed to build new OpenSceneGraph
@@ -49,6 +49,9 @@ Biblioteki programistyczne OpenThreads.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix}
+if [ "%{_libdir}" == "%{_prefix}/lib64" ]; then
+	mv $RPM_BUILD_ROOT{%{_prefix}/lib,%{_libdir}}
+fi
 ln -sf `basename $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so.*` $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so
 
 %clean
