@@ -49,13 +49,13 @@ Biblioteki programistyczne OpenThreads.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix}
-if [ "%{_libdir}" == "%{_prefix}/lib64" ]; then
-	mv $RPM_BUILD_ROOT{%{_prefix}/lib,%{_libdir}}
-fi
+	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix} \
+	INST_LIBS=$RPM_BUILD_ROOT%{_libdir}
+
 ln -sf `basename $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so.*` $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so
+
 install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_pkgconfigdir}/openthreads.pc
+sed -e 's/^libdir=.*/libdir=%{_libdir}/' %{SOURCE1} >$RPM_BUILD_ROOT%{_pkgconfigdir}/openthreads.pc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
