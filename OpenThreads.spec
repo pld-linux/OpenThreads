@@ -9,11 +9,11 @@ Group:		Libraries
 # version from OSG_OP_OT-0.9.6-2.tar.gz needed to build new OpenSceneGraph
 # Source0:	http://dl.sourceforge.net/openthreads/%{name}-v%{version}dev%{devel}-osg0.9.5.tar.gz
 Source0:	OpenThreads-v%{version}dev%{devel}.tar.gz
-# Source0-md5:  0a1c190e358459aa4a2f1018dc397be5
+# Source0-md5:	0a1c190e358459aa4a2f1018dc397be5
 Patch0:		%{name}-soname.patch
 URL:		http://openthreads.sourceforge.net/
 BuildRequires:	libstdc++-devel
-BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This library is intended to provide a minimal & complete
