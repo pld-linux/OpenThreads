@@ -29,6 +29,7 @@ Bazuje na modelu API w±tków w javie oraz na standardzie w±tków POSIX.
 Summary:	OpenThreads devel files
 Summary(pl):	Biblioteki programistyczne OpenThreads
 Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 OpenThreads devel files.
