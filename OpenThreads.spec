@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 ln -sf `basename $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so.*` $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so
 
 install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
-sed -e 's/^libdir=.*/libdir=%{_libdir}/' %{SOURCE1} >$RPM_BUILD_ROOT%{_pkgconfigdir}/openthreads.pc
+sed -e 's,^libdir=.*,libdir=%{_libdir},' %{SOURCE1} >$RPM_BUILD_ROOT%{_pkgconfigdir}/openthreads.pc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
