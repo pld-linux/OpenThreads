@@ -10,6 +10,7 @@ Group:		Libraries
 #Source0:	OpenThreads-v%{version}dev%{devel}.tar.gz
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/openscenegraph/%{name}-%{version}.tar.gz
 # Source0-md5:	a1d792ae4ce38590ff498e0c7d9ad939
+Source1:	%{name}.pc
 Patch0:		%{name}-soname.patch
 URL:		http://openthreads.sourceforge.net/
 BuildRequires:	libstdc++-devel
@@ -56,6 +57,8 @@ if [ "%{_libdir}" == "%{_prefix}/lib64" ]; then
 	mv $RPM_BUILD_ROOT{%{_prefix}/lib,%{_libdir}}
 fi
 ln -sf `basename $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so.*` $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so
+install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_pkgconfigdir}/openthreads.pc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -72,3 +75,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS.txt ChangeLog README.txt TODO.txt
 %attr(755,root,root) %{_libdir}/lib%{name}.so
 %{_includedir}/%{name}
+%{_pkgconfigdir}/openthreads.pc
