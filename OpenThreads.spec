@@ -10,6 +10,7 @@ Group:		Libraries
 # Source0:	http://dl.sourceforge.net/openthreads/%{name}-v%{version}dev%{devel}-osg0.9.5.tar.gz
 Source0:	OpenThreads-v%{version}dev%{devel}.tar.gz
 # Source0-md5:  0a1c190e358459aa4a2f1018dc397be5
+Patch0:		%{name}-soname.patch
 URL:		http://openthreads.sourceforge.net
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,6 +38,7 @@ Biblioteki programistyczne OpenThreads.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p0
 
 %build
 %{__make} \
@@ -47,15 +49,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix}
-mv $RPM_BUILD_ROOT%{_prefix}/lib/libOpenThreads.so $RPM_BUILD_ROOT%{_libdir}/libOpenThreads.so.0
-ln -sf libOpenThreads.so.0 $RPM_BUILD_ROOT%{_libdir}/libOpenThreads.so
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib%{name}.so.*
+%attr(755,root,root) %{_libdir}/lib%{name}.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
