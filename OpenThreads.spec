@@ -12,6 +12,7 @@ Source0:	OpenThreads-v%{version}dev%{devel}.tar.gz
 # Source0-md5:  0a1c190e358459aa4a2f1018dc397be5
 Patch0:		%{name}-soname.patch
 URL:		http://openthreads.sourceforge.net/
+BuildRequires:	libstdc++-devel
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,6 +31,7 @@ Summary:	OpenThreads devel files
 Summary(pl):	Biblioteki programistyczne OpenThreads
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libstdc++-devel
 
 %description devel
 OpenThreads devel files.
