@@ -1,15 +1,15 @@
-%define		devel	3
 Summary:	A minimal & complete Object-Oriented (OO) thread interface
 Summary(pl):	Minimalny ale kompletny interfejs w±tków w programowaniu OO
 Name:		OpenThreads
-Version:	1.2
-Release:	0.%{devel}.2
+Version:	1.3
+Release:	0.1
 License:	LGPL
 Group:		Libraries
 # version from OSG_OP_OT-0.9.6-2.tar.gz needed to build new OpenSceneGraph
 # Source0:	http://dl.sourceforge.net/openthreads/%{name}-v%{version}dev%{devel}-osg0.9.5.tar.gz
-Source0:	OpenThreads-v%{version}dev%{devel}.tar.gz
-# Source0-md5:	0a1c190e358459aa4a2f1018dc397be5
+#Source0:	OpenThreads-v%{version}dev%{devel}.tar.gz
+Source0:	http://heanet.dl.sourceforge.net/sourceforge/openscenegraph/%{name}-%{version}.tar.gz
+# Source0-md5:	a1d792ae4ce38590ff498e0c7d9ad939
 Patch0:		%{name}-soname.patch
 URL:		http://openthreads.sourceforge.net/
 BuildRequires:	libstdc++-devel
