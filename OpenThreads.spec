@@ -1,5 +1,5 @@
 Summary:	A minimal & complete Object-Oriented (OO) thread interface
-Summary(pl):	Minimalny ale kompletny interfejs w眛k體 w programowaniu OO
+Summary(pl.UTF-8):   Minimalny ale kompletny interfejs w膮tk贸w w programowaniu OO
 Name:		OpenThreads
 Version:	1.3
 Release:	1
@@ -19,14 +19,14 @@ Object-Oriented (OO) thread interface for C++ programmers. It is
 loosely modeled on the Java thread API, and the POSIX Threads
 standards.
 
-%description -l pl
-Biblioteka jest przeznaczona do udost阷niania minimalnego ale pe硁ego
-interfejsu obiektowo zorientowanych (OO) w眛k體 dla programist體 C++.
-Bazuje na modelu API w眛k體 w Javie oraz na standardzie w眛k體 POSIX.
+%description -l pl.UTF-8
+Biblioteka jest przeznaczona do udost臋pniania minimalnego ale pe艂nego
+interfejsu obiektowo zorientowanych (OO) w膮tk贸w dla programist贸w C++.
+Bazuje na modelu API w膮tk贸w w Javie oraz na standardzie w膮tk贸w POSIX.
 
 %package devel
 Summary:	OpenThreads devel files
-Summary(pl):	Biblioteki programistyczne OpenThreads
+Summary(pl.UTF-8):   Biblioteki programistyczne OpenThreads
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -34,7 +34,7 @@ Requires:	libstdc++-devel
 %description devel
 OpenThreads devel files.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Biblioteki programistyczne OpenThreads.
 
 %prep
