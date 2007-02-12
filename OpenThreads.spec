@@ -1,5 +1,5 @@
 Summary:	A minimal & complete Object-Oriented (OO) thread interface
-Summary(pl.UTF-8):   Minimalny ale kompletny interfejs wątków w programowaniu OO
+Summary(pl.UTF-8):	Minimalny ale kompletny interfejs wątków w programowaniu OO
 Name:		OpenThreads
 Version:	1.3
 Release:	1
@@ -26,7 +26,7 @@ Bazuje na modelu API wątków w Javie oraz na standardzie wątków POSIX.
 
 %package devel
 Summary:	OpenThreads devel files
-Summary(pl.UTF-8):   Biblioteki programistyczne OpenThreads
+Summary(pl.UTF-8):	Biblioteki programistyczne OpenThreads
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
